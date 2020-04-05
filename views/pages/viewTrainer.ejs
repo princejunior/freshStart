@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs')%>
+<body>
+<%- include('../partials/header.ejs')%>  
+
+<main>
+  <section class="probootstrap-intro probootstrap-intro-inner" style="background-image: url(&quot;<%= trainer.profile_img_url%>&quot;); background-position: 0px 0px;" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 probootstrap-intro-text">
+          <h1 class="probootstrap-animate fadeIn probootstrap-animated" data-animate-effect="fadeIn" style="color:rgb(255, 255, 255);">
+            <span><%= trainer.first_name%></span>
+            <%= trainer.last_name %>  
+          </h1>
+          <div class="probootstrap-subtitle probootstrap-animate fadeIn probootstrap-animated" data-animate-effect="fadeIn">
+            <h2 style="color:rgb(255, 255, 255);">Personal Trainer</a></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="probootstrap-animate fadeInUp probootstrap-animated"><a class="probootstrap-scroll-down js-next" href="#next-section">Scroll down <i class="icon-chevron-down"></i></a></span>
+  </section>
+  <!-- END: section -->
+<main>
+  <section id="next-section" class="probootstrap-section">
+    <div class="container">
+      <div class="row probootstrap-gutter60 mb50">
+        <div class="col-md-6">
+          <figure><img src="<%= trainer.profile_img_url%>" lt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
+        </div>
+        <div class="col-md-6">
+          <h2 class="probootstrap-heading">About Me</h2>
+             <%= desc.about_me%>
+        </div>
+      </div>
+      <div class="row probootstrap-gutter60">
+        <div class="col-md-4 mb30">
+          <h4 class="mb30">My Mission</h4>
+          <div>
+            <%= desc.my_mission%>
+          </div>
+        </div>
+        <div class="col-md-4 mb30">
+          <h4 class="mb30">Upcoming Events</h4>
+          <ul class="probootstrap-blog-list">
+            <li>
+              <a href="#">
+                <figure class="probootstrap-image"><img src="../trainer/img/img_4.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
+                <div class="probootstrap-text">
+                  <h4>Initial into the belt and made herself</h4>
+                  <span class="meta">September, 14 2017</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <figure class="probootstrap-image"><img src="../trainer/img/img_5.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
+                <div class="probootstrap-text">
+                  <h4>Far far away behind the word mountains</h4>
+                  <span class="meta">September, 14 2017</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <figure class="probootstrap-image"><img src="../trainer/img/img_6.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
+                <div class="probootstrap-text">
+                  <h4>Bookmarksgrove right at the coast of the Semantics</h4>
+                  <span class="meta">September, 14 2017</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb30">
+          <h4 class="mb30">My Vision</h4>
+          <div>
+            <%= desc.my_vision %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="next-section" class="probootstrap-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 probootstrap-relative">
+          <h2 class="probootstrap-heading mt0 mb50">Programs (For Beginners)</h2>
+          <ul class="probootstrap-owl-navigation absolute right">
+            <li><a href="#" class="probootstrap-owl-prev"><i class="icon-chevron-left"></i></a></li>
+            <li><a href="#" class="probootstrap-owl-next"><i class="icon-chevron-right"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 probootstrap-relative">
+          <div class="owl-carousel owl-carousel-carousel">
+            <% content.forEach(function(content) { %>
+            <div class="item">
+              <div class="probootstrap-program">
+                <a href="#"><img src="<%= content.post_img_url %>" alt="" class="img-responsive img-rounded"></a>
+                <h3><%= content.title %></h3>
+                <p>$<%= content.post_price %></p>
+                <p><%= content.post_description %></p>
+                <button><a href="" >Book Now</a></button>
+              </div>
+            </div>
+           <% }); %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   
+  </main>
+<%- include('../partials/footer.ejs') %>  
+</body>
+</html>

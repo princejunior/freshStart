@@ -1,0 +1,12 @@
+#login {
+    /* visibility: visible;  */
+    display: block;
+}
+#signUp {
+    /* visibility: hidden;  */
+    display: none;
+}
+#trainerSignUp {
+    /* visibility: hidden; */
+    display: none;
+}

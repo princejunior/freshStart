@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include('../partials/head.ejs')%>
+</head>
+<body>
+<%- include('../partials/header.ejs')%>
+
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Live W.O.W.</h1>
+            <p class="lead text-muted">Looking for a personal trainer or classes near you. 
+                    Live WOW is a plateform to help connect you to a 
+                    tailored trainer that is best for you! Trainers found here are certified 
+                    to come to your house, work, and even to a park to help you stay healthy. 
+                    No need to worry, you can pair up with a trainer to fit your busy schedule.</p>
+            <p>
+                <a href="#" class="btn btn-primary my-2">Find the Right Trainer for You</a>
+            </p>
+        </div>
+    </section>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+            <% trainer.forEach(function(trainer) { %>
+    
+                    <div class="col-md-4" style="margin-bottom: 25px;" id=>
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" 
+                                src="<%= trainer.profile_img_url%> " data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                            <div class="card-body">
+                                <h3 class="card-title">
+                                    <%= trainer.first_name + ' ' + trainer.last_name%> 
+                                </h3>
+                                <h5 class="card-title">
+                                    <%= trainer.speciality%> 
+                                </h5>
+                                <p class="card-text">
+
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                    <div class="btn btn-primary" value="<%= trainer.id%> ">
+                                     <a href='/viewProfile/<%= trainer.id%>'><button>
+                                    View Profile</button></a></div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+        </div>
+    </div>
+</main>
+<%- include('../partials/footer.ejs') %>
+</body>
+</html>
+    

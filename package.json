@@ -1,0 +1,21 @@
+{
+  "name": "livewowllc",
+  "version": "1.0.0",
+  "description": "Amazon for Fitness",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Elijah Elliott",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "path": "^0.12.7",
+    "pg": "^8.0.0"
+  }
+}
